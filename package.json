@@ -1,12 +1,16 @@
 {
   "name": "feed-framer-sdk",
-  "version": "1.0.8",
+  "description": "A developer friendly way to display your Instagram Feed",
+  "version": "1.0.22",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "instagram"
   ],
   "scripts": {
     "dev": "vite",

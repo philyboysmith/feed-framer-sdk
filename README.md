@@ -18,8 +18,9 @@ Either is perfectly valid. It all depends on the project's needs and the develop
 ### From a script tag
 
 This is by far the simplest way to get started with Feed Framer. Include the following <script> tag in your HTML page.
-
+```
 <script defer src="https://unpkg.com/feed-framer-sdk@1.x.x/dist/index.umd.js"></script>
+```
 
 ### Add a module
 
@@ -35,16 +36,19 @@ npm install feed-framer-sdk
 ## Initialize the SDK
 
 ```
- const feedFramer = new FeedFramer({apiToken: 'YOUR_API_TOKEN'});
-```
-
-### Run the init function to render the widget
-
-```
+const feedFramer = new FeedFramer({apiToken: 'YOUR_API_TOKEN'});
 feedFramer.init({
     accountId: 'YOUR_ACCOUNT_ID',
     // add configuration options here
-});
+}); 
+```
+
+## Styling
+
+If you want to use the default styles provided by Feed Framer, you can include the following <link> tag in the head of your HTML page.
+
+```
+<link rel="stylesheet" href="https://unpkg.com/feed-framer-sdk@1.x.x/dist/assets/style.css">
 ```
 
 For a full list of configurable options, visit (documentation)[https://feedframer.com/documentation]

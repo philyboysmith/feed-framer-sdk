@@ -1,13 +1,15 @@
 import mustache from 'mustache';
 import { DEFAULT_TEMPLATE } from './constants';
 import { RenderProps } from './types';
-
-export class FeedFramer {
+import './assets/styles.css'; // Ensure the CSS is included in the bundle
+export default class FeedFramer {
     apiToken: string;
     baseUrl: string;
-    constructor(config: { apiToken: string, baseUrl?: string }) {
+    cssUrl: string;
+    constructor(config: { apiToken: string, baseUrl?: string, cssUrl?: string }) {
         this.apiToken = config.apiToken;
         this.baseUrl = config.baseUrl || 'https://feedframer.com';
+        this.cssUrl = config.cssUrl || 'https://unpkg.com/feed-framer-sdk@1.x.x/dist/assets/style.css';
     }
     protected request<T>(endpoint: string, options?: RequestInit): Promise<T> {
         const url = `${this.baseUrl}${endpoint}`;
@@ -141,10 +143,10 @@ export class FeedFramer {
 
         if(includeStyles) {
             this.generateDynamicCSS(targetId, maxItemsPerRow, gap, breakpoints);
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = `${this.baseUrl}/build/assets/embed.css`;
-            document.head.appendChild(link);
+            // const link = document.createElement('link');
+            // link.rel = 'stylesheet';
+            // link.href = `${this.baseUrl}/build/assets/embed.css`;
+            // document.head.appendChild(link);
         }
     }
     

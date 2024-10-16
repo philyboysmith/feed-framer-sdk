@@ -28,9 +28,11 @@ export default defineConfig({
         // Ensure proper file output
         output: {
           entryFileNames: "index.umd.js", // Ensures .js extension
+          globals: {
+            mustache: 'Mustache'
+          },
+          assetFileNames: "assets/[name][extname]", // CSS will go in assets/
         },
-        // You can externalize dependencies to avoid bundling them
-        external: [],
-      },
+    },
   },
 });
